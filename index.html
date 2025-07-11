@@ -1,4 +1,43 @@
 <!DOCTYPE html>
 <html>
+  
+  <script>
+    lvl = 1;
+    lvl_maps = [["error"],
+    
+    [".@....",
+     "......",
+     "...W..",
+     "......",
+     "......",
+     "......"]
+    
+    ]
+    
+    
+    function drawdisplay(){
+      var c = document.getElementById("display");
+      var ctx = c.getContext("2d");
+      let lvl_len = lvl_maps[lvl][1].length
+      for (let i=0;i<lvl_maps[lvl].length;i++){ //repeat for each row
+        for (let j=0;j<lvl_maps[lvl][i].length;j++){ //repeat for each char
+          ctx.rect(j*36+4,i*36,32,32);
+        }
+      }
+      ctx.stroke();
+    }
+  </script>
+  
+  
+  
+  <canvas id="display" height="432" width="576" 
+style="border:1px solid #000000;position:fixed;left:50px;top:50px">
+  <script>
+    var c = document.getElementById("display");
+    var ctx = c.getContext("2d");
+    drawdisplay();
+  </script>
+
+
 
 </html>
